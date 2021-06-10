@@ -61,7 +61,7 @@ public class Calcuator
 		frame.setBounds(100, 100, 279, 424);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		ImageIcon image= new ImageIcon("Calculator.png");//create an imageicon 
+		ImageIcon image= new ImageIcon("C:\\Users\\MR ODOI\\git\\Calculator-Final-Project\\Calculator\\img\\cal.png");//create an imageicon 
 		frame.setIconImage(image.getImage());// change icon of frame
 		
 		textDisplay = new JTextField();
