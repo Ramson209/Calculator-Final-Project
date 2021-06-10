@@ -1,9 +1,11 @@
 package Calculators;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
@@ -59,6 +61,8 @@ public class Calcuator
 		frame.setBounds(100, 100, 279, 424);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		ImageIcon image= new ImageIcon("Calculator.png");//create an imageicon 
+		frame.setIconImage(image.getImage());// change icon of frame
 		
 		textDisplay = new JTextField();
 		textDisplay.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -68,6 +72,8 @@ public class Calcuator
 		
 		//------------Row1----- create backbutton,clear ,percentage sign and plus sign---------------------------------
 		JButton btnBackSpace = new JButton("\uF0E7");
+		btnBackSpace.setBackground(Color.orange);
+		btnBackSpace.setForeground(Color.white);
 		btnBackSpace.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String backspace = null;
@@ -86,6 +92,8 @@ public class Calcuator
 		
 		
 		JButton btnClear = new JButton("C");
+		btnClear.setBackground(Color.orange);
+		btnClear.setForeground(Color.white);
 		btnClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textDisplay.setText(null);
@@ -97,6 +105,8 @@ public class Calcuator
 		
 		
 		JButton btnPercen = new JButton("%");
+		btnPercen.setBackground(Color.orange);
+		btnPercen.setForeground(Color.white);
 		btnPercen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				firstnum =Double.parseDouble(textDisplay.getText());
@@ -109,6 +119,8 @@ public class Calcuator
 		frame.getContentPane().add(btnPercen);
 		
 		JButton btnPlus = new JButton("+");
+		btnPlus.setBackground(Color.orange);
+		btnPlus.setForeground(Color.white);
 		btnPlus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				firstnum =Double.parseDouble(textDisplay.getText());
@@ -157,6 +169,8 @@ public class Calcuator
 		frame.getContentPane().add(btn9);
 		
 		JButton btnMinus = new JButton("-");
+		btnMinus.setBackground(Color.orange);
+		btnMinus.setForeground(Color.white);
 		btnMinus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				firstnum =Double.parseDouble(textDisplay.getText());
@@ -207,6 +221,8 @@ public class Calcuator
 		
 		
 		JButton btnMult = new JButton("*");
+		btnMult.setBackground(Color.orange);
+		btnMult.setForeground(Color.white);
 		btnMult.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				firstnum =Double.parseDouble(textDisplay.getText());
@@ -254,6 +270,8 @@ public class Calcuator
 		frame.getContentPane().add(btn3 );
 		
 		JButton btnDiv = new JButton("/");
+		btnDiv.setBackground(Color.orange);
+		btnDiv.setForeground(Color.white);
 		btnDiv.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				firstnum =Double.parseDouble(textDisplay.getText());
@@ -303,6 +321,7 @@ public class Calcuator
 		
 		
 		JButton btnEquals = new JButton("=");
+		
 		btnEquals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -335,7 +354,7 @@ public class Calcuator
 				}
 				
 				else if (Operations == "%") {
-					result =firstnum % secondnum;
+					result =firstnum/100 % secondnum;
 					answer = String.format("%.2f", result);
 					textDisplay.setText(answer);
 				}
